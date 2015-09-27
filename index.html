@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IT 411 - Assignment 6 - AJAX Image Load - Jennifer Kania</title>
+<link href="_css/site.css" rel="stylesheet">
+<style>
+#newslinks li {
+  display: inline-block;
+  margin-right: 20px;
+}
+#newslinks li a {
+  padding: 5px 10px;
+  background-color: white;
+  color: black !important;
+  text-decoration: none;
+}
+#newslinks li a:hover {
+  background-color: rgb(110,138,195);
+  color: white !important;
+}
+#headlines #newsItem {
+  margin-top: 10px;
+  padding: 20px;
+  border: 1px solid white;
+}
+</style>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#newslinks a').click(function() {
+    var url=$(this).attr('href');
+    $('#headlines').load(url + ' #newsItem');
+    return false;
+  }); //end click
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <p class="logo">IT 411 - Assignment 6 - AJAX Image Load <i class="mm">Jennifer<br>Kania</i></p>
+  </div>
+  <div class="content">
+    <div class="main">
+      <h1>Images</h1>
+      <ul id="newslinks">
+        <li><a href="myBoys.html">My Boys</a></li>
+        <li><a href="IrishDog.html">An Irish Dog</a></li>
+        <li><a href="BeerGlass.html">Beer Glass</a></li>
+      </ul>
+      <div id="headlines"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>Created By Jennifer Kania</p>
+  </div>
+</div>
+</body>
+</html>
